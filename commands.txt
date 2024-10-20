@@ -1,0 +1,4 @@
+SRNO=12345 make run
+sudo perf mem record ./main 24314
+sudo perf mem report --stdio -F dso,symbol,mem,tlb --phys-data -i perf.data > memory_accesses.txt
+python3 analyze.py 8
